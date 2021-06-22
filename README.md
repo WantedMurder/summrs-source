@@ -1,3 +1,2 @@
 # summrs
-cy is ~~good~~ shit at golang
-
+lxi is shit :( cy W

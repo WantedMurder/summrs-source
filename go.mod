@@ -1,4 +1,4 @@
-module github.com/summrs-dev-team/summrs
+module github.com/WantedMurder/summrs-source
 
 go 1.15
 
