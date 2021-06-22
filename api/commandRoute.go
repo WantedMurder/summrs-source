@@ -2,7 +2,8 @@ package api
 
 import (
 	"github.com/bwmarrin/discordgo"
-	"github.com/summrs-dev-team/summrs/commands"
+	"github.com/WantedMurder/summrs-source/commands"
+
 )
 
 func init() {

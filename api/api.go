@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/summrs-dev-team/summrs/commands"
-	"github.com/summrs-dev-team/summrs/events"
+	"github.com/WantedMurder/summrs-source/commands"
+	"github.com/WantedMurder/summrs-source/events"
 
 	"github.com/bwmarrin/discordgo"
 )
