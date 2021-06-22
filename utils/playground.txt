@@ -1,4 +1,4 @@
-use Bot
+use Listian
 db.whitelist.insertOne({useless: "github.com/WantedMurder"})
 
 use List

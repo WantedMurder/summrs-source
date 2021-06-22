@@ -12,7 +12,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/summrs-dev-team/summrs/database"
+	"github.com/WantedMurder/summrs-source/database"
 )
 
 func (cmds *Commands) Add(name string, function handler, config *Config) *Command {
