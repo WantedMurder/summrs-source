@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/summrs-dev-team/summrs/utils"
+	"github.com/WantedMurder/summrs-source/utils"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 

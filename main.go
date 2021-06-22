@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"https://github.com/WantedMurder/summrs-source/api"
+	"github.com/WantedMurder/summrs-source/api"
 	"github.com/bwmarrin/discordgo"
 )
 

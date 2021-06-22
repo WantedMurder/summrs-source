@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"https://github.com/WantedMurder/summrs-source/events"
-	"https://github.com/WantedMurder/summrs-source/utils"
+	"github.com/WantedMurder/summrs-source/events"
+	"github.com/WantedMurder/summrs-source/utils"
 
 	"github.com/bwmarrin/discordgo"
 )

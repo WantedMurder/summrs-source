@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/summrs-dev-team/summrs/utils"
+	"github.com/WantedMurder/summrs-source/utils"
 )
 
 func (cmd *Commands) Avatar(s *discordgo.Session, m *discordgo.Message, ctx *Context) {

@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/bwmarrin/discordgo"
-	"https://github.com/WantedMurder/summrs-source/database"
+	"github.com/WantedMurder/summrs-source/database"
 )
 
 func FindAudit(s *discordgo.Session, guildID string, auditType int) (*discordgo.AuditLogEntry, interface{}, error) {
