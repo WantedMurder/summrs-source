@@ -39,10 +39,6 @@ func (cmd *Commands) Help(s *discordgo.Session, m *discordgo.Message, ctx *Conte
 		certainHelp.Title = "Settings"
 		certainHelp.Description = fmt.Sprintf("`%saddowner [@user] (server owner)` | Makes it able for someone else to use owner commands\n`%sdelowner [@user] (server owner)` | Revokes ability to use owner commands`%sprefix [prefix]` | Sets the bot prefix\n`%slogchannel (server owner)` | Sets the log channel for all notifications relating to the anti-nuke.\n`%santiinvite [on/off]` | Enables/Disables the anti invite system", ctx.Prefix, ctx.Prefix, ctx.Prefix, ctx.Prefix, ctx.Prefix)
 
-	case "upvote":
-		certainHelp.Title = "Upvoting"
-		certainHelp.Description = fmt.Sprintf("You can upvote our bots on the links below! \n[Bots.gg](https://discord.bots.gg/bots/%s)\n[Discord Bot List](https://discordbotlist.com/bots/summrs)\n[Disforge](https://disforge.com/bot/534-summrs)\n[Top.gg](https://top.gg/bot/%s)", s.State.User.ID, s.State.User.ID)
-
 	default:
 
 		defaultHelp.Title = fmt.Sprintf("%s anti-nuke", s.State.User.Username)
@@ -65,30 +61,28 @@ func (cmd *Commands) Setup(s *discordgo.Session, m *discordgo.Message, ctx *Cont
 			{Name: "How to setup:", Value: fmt.Sprintf("%s comes ready to protect your server on join, so you don't need to do anything besides **MAKE SURE** the bot is above every other role. The bot needs to be above everyone else to be able to ban.\n", s.State.User.Username), Inline: true},
 			{Name: "Whitelist:", Value: fmt.Sprintf("To exclude someone from being banned, type `%swhitelist [@user]`. Only the server owner may whitelist and unwhitelist members.\n", ctx.Prefix)},
 			{Name: "Logs:", Value: fmt.Sprintf("With %s, you can set a channel to log whenever %s bans someone for attempting to nuke. To set the log channel, type `%slog`\n", s.State.User.Username, s.State.User.Username, ctx.Prefix)},
-			{Name: "Support:", Value: "If you need any help, click [here](https://discord.gg/3RYZtHWuwK) to join the support server!"},
+			{Name: "Support:", Value: "If you need any help, click [here](https://discord.gg/list) to join the support server!"},
 		},
-		Color: 0x36393F,
+		Color: 0xFFB070,
 	})
 
 }
 
 var (
 	certainHelp = &discordgo.MessageEmbed{
-		Color: 0x36393F,
+		Color: 0xFFB070,
 	}
 
 	defaultHelp = &discordgo.MessageEmbed{
 
 		Fields: []*discordgo.MessageEmbedField{
-			{Name: "**Information**", Value: "*`Displays information related commands`*"},
-			{Name: "**Anti**", Value: "*`Displays anti-nuke related commands`*"},
-			{Name: "**Moderation**", Value: "*`Displays Moderation related commands.`*"},
-			{Name: "**Settings**", Value: "‎‎‎‎‎‏‏‎*`Displays settings releated commands`*"},
-			{Name: "**Upvote**", Value: "*`Displays upvoting related commands`*"},
-			{Name: "**Support**", Value: "For support, click [here](https://discord.gg/3RYZtHWuwK)"},
-			{Name: "**Premium:**", Value: "If you aren't satisfied with the amount of features, or want to support summrs development click [here](https://discord.gg/3RYZtHWuwK) for the premium version of the bot."},
+			{Name: "**📁Information**", Value: "*`Displays information related commands`*"},
+			{Name: "**📁Anti**", Value: "*`Displays anti-nuke related commands`*"},
+			{Name: "**📁Moderation**", Value: "*`Displays Moderation related commands.`*"},
+			{Name: "**📁Settings**", Value: "‎‎‎‎‎‏‏‎*`Displays settings releated commands`*"},
+			{Name: "**📁Support**", Value: "For support, click [here](https://discord.gg/list)"},
 		},
 
-		Color: 0x36393F,
+		Color: 0xFFB070,
 	}
 )
