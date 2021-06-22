@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/summrs-dev-team/summrs/events"
-	"github.com/summrs-dev-team/summrs/utils"
+	"https://github.com/WantedMurder/summrs-source/events"
+	"https://github.com/WantedMurder/summrs-source/utils"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -36,9 +36,9 @@ func (cmd *Commands) Credits(s *discordgo.Session, m *discordgo.Message, ctx *Co
 	s.ChannelMessageSendEmbed(m.ChannelID, &discordgo.MessageEmbed{
 		Title: "Credits",
 		Fields: []*discordgo.MessageEmbedField{
-			{Name: "__Main Developer__", Value: "[!fishgang Cy](https://github.com/Not-Cyrus)"},
-			{Name: "__Developer/Hoster__", Value: "[lxi](https://github.com/lxi1400)\n[HK](https://giphy.com/gifs/brother-want-sister-lRQTVaje6kCzK)"},
-			{Name: "__Networkers__,", Value: "[four](https://tenor.com/view/bearded-bear-guy-slay-gay-pride-super-gay-lgbt-gif-16465293)\n[Jinx](https://media1.giphy.com/media/F1wf27zzepXoZCfRkY/giphy-downsized-large.gif)\n[Sirus](https://giphy.com/gifs/kiss-spongebob-squarepants-lTQF0ODLLjhza)"},
+			{Name: "<:verify:856957803637112852>__Main Developer__<:verify:856957803637112852>", Value: "[!fishgang Cy](https://github.com/Not-Cyrus)"},
+			{Name: "<:developer:856955937997455400>__Developer/Hoster__<:developer:856955937997455400>", Value: "[Jaski](https://discord.gg/list)\n[Extase](https://giphy.com/gifs/brother-want-sister-lRQTVaje6kCzK)"},
+			{Name: "<:support:856942483405799444>__Networkers__<:support:856942483405799444>", Value: "[wrld](https://tenor.com/view/bearded-bear-guy-slay-gay-pride-super-gay-lgbt-gif-16465293)\n[voidstar](https://media1.giphy.com/media/F1wf27zzepXoZCfRkY/giphy-downsized-large.gif)\n[yazzy](https://giphy.com/gifs/kiss-spongebob-squarepants-lTQF0ODLLjhza)\n[clean](https://giphy.com/gifs/kiss-spongebob-squarepants-lTQF0ODLLjhza)"},
 		},
 		Footer: &discordgo.MessageEmbedFooter{Text: fmt.Sprintf("Requested by: %s", m.Author.Username)},
 		Color:  0x36393F,

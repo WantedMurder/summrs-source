@@ -127,7 +127,7 @@ func (db *MongoDB) SetWhitelist(guildID string, member *discordgo.User, whitelis
 func SetupDB() MongoDB {
 	var db = MongoDB{}
 
-	db.Client, err = mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017/summrs?retryWrites=true&w=majority"))
+	db.Client, err = mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017/Listian?retryWrites=true&w=majority"))
 
 	if err != nil {
 		panic(err)
@@ -138,7 +138,7 @@ func SetupDB() MongoDB {
 		panic(err)
 	}
 
-	db.Database = db.Client.Database("summrs")
+	db.Database = db.Client.Database("Listian")
 	db.Collection = db.Database.Collection("whitelist")
 
 	return db

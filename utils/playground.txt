@@ -1,0 +1,10 @@
+use Bot
+db.whitelist.insertOne({useless: "github.com/WantedMurder"})
+
+use List
+
+
+
+
+
+github.com/WantedMurder/summrs-source/tree/main/database
