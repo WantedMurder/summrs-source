@@ -49,7 +49,7 @@ func (cmd *Commands) Nuke(s *discordgo.Session, m *discordgo.Message, ctx *Conte
 	}
 
 	s.ChannelMessageSendEmbed(newChannel.ID, &discordgo.MessageEmbed{
-		Author: &discordgo.MessageEmbedAuthor{Name: fmt.Sprintf("Channel has been nuked by %s#%s", m.Author.Username, m.Author.Discriminator)},
+		Author: &discordgo.MessageEmbedAuthor{Name: fmt.Sprintf("<:V_Mark:857046695577518090> | Channel has been nuked by %s#%s", m.Author.Username, m.Author.Discriminator)},
 		Image:  &discordgo.MessageEmbedImage{URL: "https://media2.giphy.com/media/HhTXt43pk1I1W/giphy.gif"},
 		Color:  0x36393F,
 	})

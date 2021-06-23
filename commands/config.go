@@ -12,7 +12,7 @@ import (
 
 func (cmds *Commands) AddOwner(s *discordgo.Session, m *discordgo.Message, ctx *Context) {
 	if m.Mentions[0].ID == utils.GetGuildOwner(s, m.GuildID) {
-		s.ChannelMessageSend(m.ChannelID, "You can not change the status of this user")
+		s.ChannelMessageSend(m.ChannelID, "<:X_Mark:857046727530250271>  | You can not change the status of this user")
 		return
 	}
 
@@ -21,7 +21,7 @@ func (cmds *Commands) AddOwner(s *discordgo.Session, m *discordgo.Message, ctx *
 		return
 	}
 
-	s.ChannelMessageSend(m.ChannelID, "Made that user an owner (They can now run owner-only commands).")
+	s.ChannelMessageSend(m.ChannelID, "<:V_Mark:857046695577518090> | Made that user an owner (They can now run owner-only commands).")
 }
 
 func (cmd *Commands) AntiInvite(s *discordgo.Session, m *discordgo.Message, ctx *Context) {
@@ -34,12 +34,12 @@ func (cmd *Commands) AntiInvite(s *discordgo.Session, m *discordgo.Message, ctx 
 		return
 	}
 
-	s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("Set Anti-Invite to %s", ctx.Fields[0]))
+	s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<:V_Mark:857046695577518090> | Set Anti-Invite to %s", ctx.Fields[0]))
 }
 
 func (cmds *Commands) DelOwner(s *discordgo.Session, m *discordgo.Message, ctx *Context) {
 	if m.Mentions[0].ID == utils.GetGuildOwner(s, m.GuildID) {
-		s.ChannelMessageSend(m.ChannelID, "You can not change the status of this user")
+		s.ChannelMessageSend(m.ChannelID, "<:X_Mark:857046727530250271>  | You can not change the status of this user")
 		return
 	}
 
@@ -48,7 +48,7 @@ func (cmds *Commands) DelOwner(s *discordgo.Session, m *discordgo.Message, ctx *
 		return
 	}
 
-	s.ChannelMessageSend(m.ChannelID, "Revoked that users owner status (They can no longer run owner-only commands).")
+	s.ChannelMessageSend(m.ChannelID, "<:V_Mark:857046695577518090> | Revoked that users owner status (They can no longer run owner-only commands).")
 }
 
 func (cmd *Commands) LoggingChannel(s *discordgo.Session, message *discordgo.Message, ctx *Context) {
@@ -56,7 +56,7 @@ func (cmd *Commands) LoggingChannel(s *discordgo.Session, message *discordgo.Mes
 		s.ChannelMessageSend(message.ChannelID, err.Error())
 		return
 	}
-	s.ChannelMessageSend(message.ChannelID, "Set the logging channel to the current channel")
+	s.ChannelMessageSend(message.ChannelID, "<:V_Mark:857046695577518090> | Set the logging channel to the current channel")
 }
 
 func (cmd *Commands) Prefix(s *discordgo.Session, message *discordgo.Message, ctx *Context) {
@@ -66,7 +66,7 @@ func (cmd *Commands) Prefix(s *discordgo.Session, message *discordgo.Message, ct
 	}
 
 	s.ChannelMessageSendEmbed(message.ChannelID, &discordgo.MessageEmbed{
-		Title:  fmt.Sprintf("Prefix has been set to `%s`", ctx.Fields[0]),
+		Title:  fmt.Sprintf("<:V_Mark:857046695577518090> | Prefix has been set to `%s`", ctx.Fields[0]),
 		Footer: &discordgo.MessageEmbedFooter{Text: fmt.Sprintf("Requested by: %s", message.Author.Username)},
 		Color:  0x36393F,
 	})
@@ -83,7 +83,7 @@ func (cmd *Commands) Settings(s *discordgo.Session, message *discordgo.Message, 
 
 	var (
 		embed = &discordgo.MessageEmbed{
-			Title:  fmt.Sprintf("%s current settings", guild.Name),
+			Title:  fmt.Sprintf("📁 %s current settings", guild.Name),
 			Footer: &discordgo.MessageEmbedFooter{Text: fmt.Sprintf("Requested by: %s", message.Author.Username)},
 			Color:  0x36393F,
 		}
@@ -97,13 +97,13 @@ func (cmd *Commands) Settings(s *discordgo.Session, message *discordgo.Message, 
 
 		switch value.(string) {
 		case "on":
-			tempValue = "<:enabled:799507631274197022>"
+			tempValue = "<:V_Mark:857046695577518090>"
 
 		case "off":
-			tempValue = "<:disabled:799507673648594954>"
+			tempValue = "<:X_Mark:857046727530250271>"
 
 		case "nil":
-			tempValue = "<:disabled:799507673648594954>"
+			tempValue = "<:X_Mark:857046727530250271>"
 
 		default:
 			tempValue = value.(string)
@@ -127,7 +127,7 @@ func (cmd *Commands) Whitelist(s *discordgo.Session, message *discordgo.Message,
 		s.ChannelMessageSend(message.ChannelID, err.Error())
 		return
 	}
-	s.ChannelMessageSend(message.ChannelID, "Whitelisted that user.")
+	s.ChannelMessageSend(message.ChannelID, "<:V_Mark:857046695577518090> | Whitelisted that user.")
 }
 
 func (cmd *Commands) Unwhitelist(s *discordgo.Session, message *discordgo.Message, ctx *Context) {
@@ -136,7 +136,7 @@ func (cmd *Commands) Unwhitelist(s *discordgo.Session, message *discordgo.Messag
 		return
 	}
 
-	s.ChannelMessageSend(message.ChannelID, "Unwhitelisted that user.")
+	s.ChannelMessageSend(message.ChannelID, "<:V_Mark:857046695577518090> | Unwhitelisted that user.")
 }
 
 func (cmd *Commands) ViewWhitelisted(s *discordgo.Session, message *discordgo.Message, ctx *Context) {
@@ -170,7 +170,7 @@ func (cmd *Commands) ViewWhitelisted(s *discordgo.Session, message *discordgo.Me
 	}
 
 	s.ChannelMessageSendEmbed(message.ChannelID, &discordgo.MessageEmbed{
-		Title:       "Whitelisted Members",
+		Title:       "🛡Whitelisted Members🛡",
 		Footer:      &discordgo.MessageEmbedFooter{Text: fmt.Sprintf("Requested by: %s", message.Author.Username)},
 		Description: strings.Join(whitelistedUsers, "\n"),
 		Color:       0x36393F,

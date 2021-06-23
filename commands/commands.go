@@ -61,7 +61,7 @@ func (cmds *Commands) Match(s *discordgo.Session, raw *discordgo.Message, contex
 
 	collection, err = database.Database.FindData(raw.GuildID)
 	if err != nil {
-		s.ChannelMessageSend(raw.ChannelID, fmt.Sprintf("```Failed to get the database collection: %s```", err.Error()))
+		s.ChannelMessageSend(raw.ChannelID, fmt.Sprintf("```<:X_Mark:857046727530250271>  | Failed to get the database collection: %s```", err.Error()))
 		return nil, nil
 	}
 
@@ -89,24 +89,24 @@ func (cmds *Commands) Match(s *discordgo.Session, raw *discordgo.Message, contex
 			return nil, nil
 
 		case !utils.HasPerms(s, raw.GuildID, raw.Author.ID, command.Config.Perms):
-			s.ChannelMessageSend(raw.ChannelID, "You do not have the required permissions to use this command.")
+			s.ChannelMessageSend(raw.ChannelID, "<:X_Mark:857046727530250271>  | You do not have the required permissions to use this command.")
 			return nil, nil // we want this before the failures.
 
 		case command.Config.RequiresArgs && len(fields) < 2:
-			failure = "You need args to use this command."
+			failure = "<:X_Mark:857046727530250271>  | You need args to use this command."
 		case command.Config.WhitelistedOnly && !(database.Database.IsWhitelisted(raw.GuildID, raw.Author.ID) || database.Database.IsOwner(raw.GuildID, raw.Author.ID)):
-			failure = "You have to be whitelisted to use this command."
+			failure = "<:X_Mark:857046727530250271>  | You have to be whitelisted to use this command."
 		case command.Config.OwnerOnly && !database.Database.IsOwner(raw.GuildID, raw.Author.ID):
-			failure = "You have to be the guild owner to use this command."
+			failure = "<:X_Mark:857046727530250271>  | You have to be the guild owner to use this command."
 		case command.Config.RequiresMention && len(raw.Mentions) == 0:
 			if len(fields) < 2 {
-				failure = "You have to use a User ID or mention someone to use this command"
+				failure = "<:X_Mark:857046727530250271>  | You have to use a User ID or mention someone to use this command"
 				break
 			}
 			raw.Mentions = make([]*discordgo.User, 1)
 			raw.Mentions[0], err = s.User(fields[1])
 			if err != nil {
-				failure = "You have to use a User ID or mention someone to use this command"
+				failure = "<:X_Mark:857046727530250271>  | You have to use a User ID or mention someone to use this command"
 			}
 		}
 
@@ -176,3 +176,5 @@ type (
 
 	handler func(*discordgo.Session, *discordgo.Message, *Context)
 )
+
+
