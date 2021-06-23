@@ -11,7 +11,7 @@ func init() {
 	commandRoute.Add("addowner", commandRoute.AddOwner, &commands.Config{
 		Alias:           []string{},
 		Cooldown:        3,
-		OwnerOnly:       true,
+		Perms:           discordgo.PermissionBanMembers,
 		RequiresMention: true,
 	})
 
